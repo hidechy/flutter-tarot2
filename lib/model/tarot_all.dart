@@ -35,10 +35,16 @@ class TarotAll {
         msg3J: json['msg3_j'].toString(),
         msg3R: json['msg3_r'].toString(),
         drawNum: json['drawNum'].toString(),
-        drawNumJ: List<DateTime>.from(json['drawNum_j']
-            .map((x) => DateTime.parse(x.toString())) as Iterable),
-        drawNumR: List<DateTime>.from(json['drawNum_r']
-            .map((x) => DateTime.parse(x.toString())) as Iterable),
+        drawNumJ: List<DateTime>.from(
+          json['drawNum_j'].map(
+            (x) => DateTime.parse(x.toString()),
+          ) as Iterable,
+        ),
+        drawNumR: List<DateTime>.from(
+          json['drawNum_r'].map(
+            (x) => DateTime.parse(x.toString()),
+          ) as Iterable,
+        ),
       );
 
   int id;
@@ -73,9 +79,17 @@ class TarotAll {
         'msg3_j': msg3J,
         'msg3_r': msg3R,
         'drawNum': drawNum,
-        'drawNum_j': List<dynamic>.from(drawNumJ.map((x) =>
-            "${x.year.toString().padLeft(4, '0')}-${x.month.toString().padLeft(2, '0')}-${x.day.toString().padLeft(2, '0')}")),
-        'drawNum_r': List<dynamic>.from(drawNumR.map((x) =>
-            "${x.year.toString().padLeft(4, '0')}-${x.month.toString().padLeft(2, '0')}-${x.day.toString().padLeft(2, '0')}")),
+        'drawNum_j': List<dynamic>.from(
+          drawNumJ.map(
+            (x) =>
+                "${x.year.toString().padLeft(4, '0')}-${x.month.toString().padLeft(2, '0')}-${x.day.toString().padLeft(2, '0')}",
+          ),
+        ),
+        'drawNum_r': List<dynamic>.from(
+          drawNumR.map(
+            (x) =>
+                "${x.year.toString().padLeft(4, '0')}-${x.month.toString().padLeft(2, '0')}-${x.day.toString().padLeft(2, '0')}",
+          ),
+        ),
       };
 }
