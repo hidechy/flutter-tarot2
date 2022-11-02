@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Haiku Kigo',
       theme: ThemeData(brightness: Brightness.dark),
-      home: const HomeScreen(),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

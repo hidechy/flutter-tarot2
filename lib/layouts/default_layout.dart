@@ -1,7 +1,8 @@
-// ignore_for_file: must_be_immutable, non_constant_identifier_names
+// ignore_for_file: must_be_immutable, non_constant_identifier_names, use_decorated_box
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:tarot/screens/tarot_history_screen.dart';
 
 import '../utility/utility.dart';
 import '../viewmodel/tarot_all_viewmodel.dart';
@@ -12,11 +13,13 @@ class DefaultLayout extends ConsumerWidget {
       {super.key,
       required this.widget,
       required this.title,
-      required this.isTitleDisplay});
+      required this.isTitleDisplay,
+      required this.isDrawerDisplay});
 
   final String title;
   final Widget widget;
   final bool isTitleDisplay;
+  final bool isDrawerDisplay;
 
   final Utility _utility = Utility();
 
@@ -32,6 +35,36 @@ class DefaultLayout extends ConsumerWidget {
           ? AppBar(
               title: Text(title),
               backgroundColor: Colors.transparent,
+              flexibleSpace: Stack(
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/image/appBarBack.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                    ),
+                  ),
+                ],
+              ),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TarotHistoryScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.calendar_today),
+                ),
+              ],
             )
           : null,
       body: Stack(
@@ -52,7 +85,7 @@ class DefaultLayout extends ConsumerWidget {
 
   ///
   Widget dispDrawer(BuildContext context) {
-    final tarotAllState = _ref.watch(tarotAllProvider);
+    final tarotCategoryAllState = _ref.watch(tarotCategoryAllProvider);
 
     return Drawer(
       backgroundColor: Colors.black.withOpacity(0.2),
@@ -71,65 +104,69 @@ class DefaultLayout extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 100),
-              if (tarotAllState.record['big'] != null)
+              if (tarotCategoryAllState.record['big'] != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: tarotAllState.record['big']!.map((val) {
+                      children: tarotCategoryAllState.record['big']!.map((val) {
                         return DrawerCard(data: val, category: 'big');
                       }).toList(),
                     ),
                   ],
                 ),
-              if (tarotAllState.record['cups'] != null)
+              if (tarotCategoryAllState.record['cups'] != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     makeDrawerTitle(title: 'Cups'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: tarotAllState.record['cups']!.map((val) {
+                      children:
+                          tarotCategoryAllState.record['cups']!.map((val) {
                         return DrawerCard(data: val, category: 'cups');
                       }).toList(),
                     ),
                   ],
                 ),
-              if (tarotAllState.record['pentacles'] != null)
+              if (tarotCategoryAllState.record['pentacles'] != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     makeDrawerTitle(title: 'Pentacles'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: tarotAllState.record['pentacles']!.map((val) {
+                      children:
+                          tarotCategoryAllState.record['pentacles']!.map((val) {
                         return DrawerCard(data: val, category: 'pentacles');
                       }).toList(),
                     ),
                   ],
                 ),
-              if (tarotAllState.record['swords'] != null)
+              if (tarotCategoryAllState.record['swords'] != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     makeDrawerTitle(title: 'Swords'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: tarotAllState.record['swords']!.map((val) {
+                      children:
+                          tarotCategoryAllState.record['swords']!.map((val) {
                         return DrawerCard(data: val, category: 'swords');
                       }).toList(),
                     ),
                   ],
                 ),
-              if (tarotAllState.record['wands'] != null)
+              if (tarotCategoryAllState.record['wands'] != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     makeDrawerTitle(title: 'Wands'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: tarotAllState.record['wands']!.map((val) {
+                      children:
+                          tarotCategoryAllState.record['wands']!.map((val) {
                         return DrawerCard(data: val, category: 'wands');
                       }).toList(),
                     ),

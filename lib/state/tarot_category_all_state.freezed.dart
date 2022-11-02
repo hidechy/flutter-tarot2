@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'tarot_all_state.dart';
+part of 'tarot_category_all_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,27 +15,28 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$TarotAllState {
+mixin _$TarotCategoryAllState {
   Map<String, List<TarotAll>> get record => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TarotAllStateCopyWith<TarotAllState> get copyWith =>
+  $TarotCategoryAllStateCopyWith<TarotCategoryAllState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TarotAllStateCopyWith<$Res> {
-  factory $TarotAllStateCopyWith(
-          TarotAllState value, $Res Function(TarotAllState) then) =
-      _$TarotAllStateCopyWithImpl<$Res, TarotAllState>;
+abstract class $TarotCategoryAllStateCopyWith<$Res> {
+  factory $TarotCategoryAllStateCopyWith(TarotCategoryAllState value,
+          $Res Function(TarotCategoryAllState) then) =
+      _$TarotCategoryAllStateCopyWithImpl<$Res, TarotCategoryAllState>;
   @useResult
   $Res call({Map<String, List<TarotAll>> record});
 }
 
 /// @nodoc
-class _$TarotAllStateCopyWithImpl<$Res, $Val extends TarotAllState>
-    implements $TarotAllStateCopyWith<$Res> {
-  _$TarotAllStateCopyWithImpl(this._value, this._then);
+class _$TarotCategoryAllStateCopyWithImpl<$Res,
+        $Val extends TarotCategoryAllState>
+    implements $TarotCategoryAllStateCopyWith<$Res> {
+  _$TarotCategoryAllStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -57,22 +58,22 @@ class _$TarotAllStateCopyWithImpl<$Res, $Val extends TarotAllState>
 }
 
 /// @nodoc
-abstract class _$$_TarotAllStateCopyWith<$Res>
-    implements $TarotAllStateCopyWith<$Res> {
-  factory _$$_TarotAllStateCopyWith(
-          _$_TarotAllState value, $Res Function(_$_TarotAllState) then) =
-      __$$_TarotAllStateCopyWithImpl<$Res>;
+abstract class _$$_TarotCategoryAllStateCopyWith<$Res>
+    implements $TarotCategoryAllStateCopyWith<$Res> {
+  factory _$$_TarotCategoryAllStateCopyWith(_$_TarotCategoryAllState value,
+          $Res Function(_$_TarotCategoryAllState) then) =
+      __$$_TarotCategoryAllStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Map<String, List<TarotAll>> record});
 }
 
 /// @nodoc
-class __$$_TarotAllStateCopyWithImpl<$Res>
-    extends _$TarotAllStateCopyWithImpl<$Res, _$_TarotAllState>
-    implements _$$_TarotAllStateCopyWith<$Res> {
-  __$$_TarotAllStateCopyWithImpl(
-      _$_TarotAllState _value, $Res Function(_$_TarotAllState) _then)
+class __$$_TarotCategoryAllStateCopyWithImpl<$Res>
+    extends _$TarotCategoryAllStateCopyWithImpl<$Res, _$_TarotCategoryAllState>
+    implements _$$_TarotCategoryAllStateCopyWith<$Res> {
+  __$$_TarotCategoryAllStateCopyWithImpl(_$_TarotCategoryAllState _value,
+      $Res Function(_$_TarotCategoryAllState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +81,7 @@ class __$$_TarotAllStateCopyWithImpl<$Res>
   $Res call({
     Object? record = null,
   }) {
-    return _then(_$_TarotAllState(
+    return _then(_$_TarotCategoryAllState(
       record: null == record
           ? _value._record
           : record // ignore: cast_nullable_to_non_nullable
@@ -91,8 +92,9 @@ class __$$_TarotAllStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TarotAllState implements _TarotAllState {
-  const _$_TarotAllState({required final Map<String, List<TarotAll>> record})
+class _$_TarotCategoryAllState implements _TarotCategoryAllState {
+  const _$_TarotCategoryAllState(
+      {required final Map<String, List<TarotAll>> record})
       : _record = record;
 
   final Map<String, List<TarotAll>> _record;
@@ -104,14 +106,14 @@ class _$_TarotAllState implements _TarotAllState {
 
   @override
   String toString() {
-    return 'TarotAllState(record: $record)';
+    return 'TarotCategoryAllState(record: $record)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TarotAllState &&
+            other is _$_TarotCategoryAllState &&
             const DeepCollectionEquality().equals(other._record, _record));
   }
 
@@ -122,18 +124,20 @@ class _$_TarotAllState implements _TarotAllState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TarotAllStateCopyWith<_$_TarotAllState> get copyWith =>
-      __$$_TarotAllStateCopyWithImpl<_$_TarotAllState>(this, _$identity);
+  _$$_TarotCategoryAllStateCopyWith<_$_TarotCategoryAllState> get copyWith =>
+      __$$_TarotCategoryAllStateCopyWithImpl<_$_TarotCategoryAllState>(
+          this, _$identity);
 }
 
-abstract class _TarotAllState implements TarotAllState {
-  const factory _TarotAllState(
-      {required final Map<String, List<TarotAll>> record}) = _$_TarotAllState;
+abstract class _TarotCategoryAllState implements TarotCategoryAllState {
+  const factory _TarotCategoryAllState(
+          {required final Map<String, List<TarotAll>> record}) =
+      _$_TarotCategoryAllState;
 
   @override
   Map<String, List<TarotAll>> get record;
   @override
   @JsonKey(ignore: true)
-  _$$_TarotAllStateCopyWith<_$_TarotAllState> get copyWith =>
+  _$$_TarotCategoryAllStateCopyWith<_$_TarotCategoryAllState> get copyWith =>
       throw _privateConstructorUsedError;
 }

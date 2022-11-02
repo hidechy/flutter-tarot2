@@ -26,15 +26,7 @@ class TarotAlert extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Container(
-                      margin: const EdgeInsets.only(top: 10, right: 10),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 30),
-                      decoration: BoxDecoration(
-                        color: Colors.yellowAccent.withOpacity(0.3),
-                      ),
-                      child: Text(DateTime.now().toString().split(' ')[0]),
-                    ),
+                    Container(),
                     Container(
                       margin: const EdgeInsets.only(top: 10, right: 10),
                       padding: const EdgeInsets.symmetric(
@@ -51,6 +43,7 @@ class TarotAlert extends StatelessWidget {
                   data.name,
                   style: const TextStyle(fontSize: 30),
                 ),
+                const SizedBox(height: 10),
                 Image.network(image),
                 const SizedBox(height: 10),
                 Container(
@@ -102,7 +95,18 @@ class TarotAlert extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Text(data.msg3J),
                 ),
-                const Divider(color: Colors.indigo),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: data.drawNumJ.map((val) {
+                        return Text(val.toString().split(' ')[0]);
+                      }).toList(),
+                    ),
+                  ],
+                ),
                 Container(
                   alignment: Alignment.topLeft,
                   decoration: BoxDecoration(
@@ -134,6 +138,18 @@ class TarotAlert extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   child: Text(data.msg3R),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: data.drawNumR.map((val) {
+                        return Text(val.toString().split(' ')[0]);
+                      }).toList(),
+                    ),
+                  ],
                 ),
               ],
             ),
