@@ -58,7 +58,7 @@ class DefaultLayout extends ConsumerWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const TarotHistoryScreen(),
+                        builder: (context) => TarotHistoryScreen(),
                       ),
                     );
                   },

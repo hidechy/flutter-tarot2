@@ -23,22 +23,6 @@ class TarotAlert extends StatelessWidget {
             style: const TextStyle(fontSize: 14),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10, right: 10),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 30),
-                      decoration: BoxDecoration(
-                        color: Colors.yellowAccent.withOpacity(0.3),
-                      ),
-                      child: Text(data.image),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
                 Text(
                   data.name,
                   style: const TextStyle(fontSize: 30),

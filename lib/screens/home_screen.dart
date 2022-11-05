@@ -54,14 +54,11 @@ class HomeScreen extends ConsumerWidget {
                   ),
                   child: Text(DateTime.now().toString().split(' ')[0]),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 10, right: 10),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.yellowAccent.withOpacity(0.3),
-                  ),
-                  child: Text(tarotTodayState.record.image),
+                IconButton(
+                  onPressed: () {
+                    showTarotDialog(id: int.parse(tarotTodayState.record.id));
+                  },
+                  icon: const Icon(Icons.info_outline),
                 ),
               ],
             ),
@@ -75,13 +72,6 @@ class HomeScreen extends ConsumerWidget {
                 quarterTurns: qt,
                 child: Image.network(image),
               ),
-            const SizedBox(height: 10),
-            GestureDetector(
-              onTap: () {
-                showTarotDialog(id: int.parse(tarotTodayState.record.id));
-              },
-              child: const Icon(Icons.info_outline),
-            ),
             const SizedBox(height: 10),
             Container(
               alignment: Alignment.topLeft,
