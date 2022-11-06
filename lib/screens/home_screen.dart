@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tarot/model/tarot_all.dart';
 
-import '../layouts/_components/tarot_alert.dart';
 import '../layouts/default_layout.dart';
+import '../model/tarot_all.dart';
+import '../utility/utility.dart';
 import '../viewmodel/tarot_all_viewmodel.dart';
 import '../viewmodel/tarot_today_viewmodel.dart';
 
@@ -14,13 +14,11 @@ class HomeScreen extends ConsumerWidget {
 
   List<TarotAll> straightAll = [];
 
-  late BuildContext _context;
+  final Utility _utility = Utility();
 
   ///
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    _context = context;
-
     final tarotStraightAllState = ref.watch(tarotStraightAllProvider);
     straightAll = tarotStraightAllState.record;
 
@@ -56,7 +54,11 @@ class HomeScreen extends ConsumerWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    showTarotDialog(id: int.parse(tarotTodayState.record.id));
+                    _utility.showTarotDialog(
+                      id: int.parse(tarotTodayState.record.id),
+                      state: straightAll,
+                      context: context,
+                    );
                   },
                   icon: const Icon(Icons.info_outline),
                 ),
@@ -112,49 +114,6 @@ class HomeScreen extends ConsumerWidget {
           ],
         ),
       ),
-    );
-  }
-
-  ///
-  void showTarotDialog({required int id}) {
-    var data = TarotAll(
-      id: 0,
-      name: '',
-      image: '',
-      prof1: '',
-      prof2: '',
-      wordJ: '',
-      wordR: '',
-      msgJ: '',
-      msgR: '',
-      msg2J: '',
-      msg2R: '',
-      msg3J: '',
-      msg3R: '',
-      drawNum: '',
-      drawNumJ: [],
-      drawNumR: [],
-    );
-
-    for (var i = 0; i < straightAll.length; i++) {
-      if (straightAll[i].id == id) {
-        data = straightAll[i];
-        break;
-      }
-    }
-
-    showDialog(
-      context: _context,
-      builder: (_) {
-        return Dialog(
-          backgroundColor: Colors.blueGrey.withOpacity(0.3),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          insetPadding: const EdgeInsets.all(30),
-          child: TarotAlert(data: data),
-        );
-      },
     );
   }
 }
