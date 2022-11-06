@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:tarot/utility/utility.dart';
 
+import '../layouts/_components/history_card.dart';
 import '../layouts/default_layout.dart';
 import '../model/tarot_all.dart';
 import '../model/tarot_history.dart';
@@ -15,8 +15,6 @@ class TarotHistoryScreen extends ConsumerWidget {
   TarotHistoryScreen({super.key});
 
   final autoScrollController = AutoScrollController();
-
-  final Utility _utility = Utility();
 
   List<Map<String, dynamic>> buttonList = [];
 
@@ -44,7 +42,10 @@ class TarotHistoryScreen extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(),
+              Text(
+                'History',
+                style: TextStyle(fontSize: 20),
+              ),
               IconButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -95,77 +96,13 @@ class TarotHistoryScreen extends ConsumerWidget {
               controller: autoScrollController,
               itemCount: tarotHistoryState.record.length,
               itemBuilder: (context, index) {
-                final date =
-                    '${tarotHistoryState.record[index].year}-${tarotHistoryState.record[index].month}-${tarotHistoryState.record[index].day}';
-
-                final qt =
-                    (tarotHistoryState.record[index].reverse == '0') ? 0 : 2;
-
-                final image = (tarotHistoryState.record[index].image == '')
-                    ? ''
-                    : 'http://toyohide'
-                        '.work/BrainLog/tarotcards/${tarotHistoryState.record[index].image}.jpg';
+                final history = tarotHistoryState.record[index];
 
                 return AutoScrollTag(
                   key: ValueKey(index),
                   index: index,
                   controller: autoScrollController,
-                  child: Card(
-                    color: Colors.black.withOpacity(0.1),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        minHeight: size.height / 8,
-                      ),
-                      child: Row(
-                        children: [
-                          if (image != '')
-                            SizedBox(
-                              width: 50,
-                              child: RotatedBox(
-                                quarterTurns: qt,
-                                child: Image.network(image),
-                              ),
-                            ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  alignment: Alignment.topRight,
-                                  child: Text(date),
-                                ),
-                                Text(tarotHistoryState.record[index].name),
-                                Text(tarotHistoryState.record[index].word),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(width: 20),
-                          Column(
-                            children: [
-                              IconButton(
-                                onPressed: () {
-                                  _utility.showTarotDialog(
-                                    id: int.parse(
-                                      tarotHistoryState.record[index].id
-                                          .toString(),
-                                    ),
-                                    state: straightAll,
-                                    context: context,
-                                  );
-                                },
-                                icon: const Icon(Icons.info_outline),
-                              ),
-                              Text(
-                                tarotHistoryState.record[index].id.toString(),
-                                style: const TextStyle(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  child: HistoryCard(history: history, usage: 'history'),
                 );
               },
             ),

@@ -61,7 +61,7 @@ flutter:
     - assets/image/
 
 flutter_native_splash:
-  image: "assets/image/tarotcard.JPG"
+  image: "assets/image/tarotcard.png"
   color: "2e2e2e"
 
 flutter_icons:

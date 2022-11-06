@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tarot/screens/tarot_history_screen.dart';
 
+import '../screens/tarot_history_screen.dart';
+import '../screens/tarot_ranking_screen.dart';
 import '../utility/utility.dart';
 import '../viewmodel/tarot_all_viewmodel.dart';
 import '_components/drawer_card.dart';
@@ -63,6 +64,17 @@ class DefaultLayout extends ConsumerWidget {
                     );
                   },
                   icon: const Icon(Icons.calendar_today),
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TarotRankingScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.trending_down_outlined),
                 ),
               ],
             )
