@@ -9,7 +9,7 @@ import '../layouts/default_layout.dart';
 import '../model/tarot_all.dart';
 import '../model/tarot_history.dart';
 import '../viewmodel/tarot_all_viewmodel.dart';
-import '../viewmodel/tarot_history_screen.dart';
+import '../viewmodel/tarot_history_notifier.dart';
 
 class TarotHistoryScreen extends ConsumerWidget {
   TarotHistoryScreen({super.key});
@@ -42,10 +42,7 @@ class TarotHistoryScreen extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'History',
-                style: TextStyle(fontSize: 20),
-              ),
+              const Text('History', style: TextStyle(fontSize: 20)),
               IconButton(
                 onPressed: () {
                   Navigator.pop(context);

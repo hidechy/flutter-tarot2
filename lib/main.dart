@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Haiku Kigo',
-      theme: ThemeData(brightness: Brightness.dark),
+      title: 'Tarot',
+      theme: ThemeData.dark(),
       home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );

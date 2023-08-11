@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:tarot/layouts/_components/_tarot_dialog.dart';
+import 'package:tarot/layouts/_components/tarot_list_alert.dart';
 
 import '../screens/tarot_history_screen.dart';
 import '../screens/tarot_ranking_screen.dart';
@@ -47,20 +49,25 @@ class DefaultLayout extends ConsumerWidget {
                     ),
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.5),
-                    ),
+                    decoration: BoxDecoration(color: Colors.black.withOpacity(0.5)),
                   ),
                 ],
               ),
               actions: [
                 IconButton(
                   onPressed: () {
+                    TarotDialog(
+                      context: context,
+                      widget: TarotListAlert(),
+                    );
+                  },
+                  icon: const Icon(Icons.list),
+                ),
+                IconButton(
+                  onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => TarotHistoryScreen(),
-                      ),
+                      MaterialPageRoute(builder: (context) => TarotHistoryScreen()),
                     );
                   },
                   icon: const Icon(Icons.calendar_today),
@@ -69,9 +76,7 @@ class DefaultLayout extends ConsumerWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => TarotRankingScreen(),
-                      ),
+                      MaterialPageRoute(builder: (context) => TarotRankingScreen()),
                     );
                   },
                   icon: const Icon(Icons.trending_down_outlined),
@@ -135,8 +140,7 @@ class DefaultLayout extends ConsumerWidget {
                     makeDrawerTitle(title: 'Cups'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:
-                          tarotCategoryAllState.record['cups']!.map((val) {
+                      children: tarotCategoryAllState.record['cups']!.map((val) {
                         return DrawerCard(data: val, category: 'cups');
                       }).toList(),
                     ),
@@ -149,8 +153,7 @@ class DefaultLayout extends ConsumerWidget {
                     makeDrawerTitle(title: 'Pentacles'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:
-                          tarotCategoryAllState.record['pentacles']!.map((val) {
+                      children: tarotCategoryAllState.record['pentacles']!.map((val) {
                         return DrawerCard(data: val, category: 'pentacles');
                       }).toList(),
                     ),
@@ -163,8 +166,7 @@ class DefaultLayout extends ConsumerWidget {
                     makeDrawerTitle(title: 'Swords'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:
-                          tarotCategoryAllState.record['swords']!.map((val) {
+                      children: tarotCategoryAllState.record['swords']!.map((val) {
                         return DrawerCard(data: val, category: 'swords');
                       }).toList(),
                     ),
@@ -177,8 +179,7 @@ class DefaultLayout extends ConsumerWidget {
                     makeDrawerTitle(title: 'Wands'),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:
-                          tarotCategoryAllState.record['wands']!.map((val) {
+                      children: tarotCategoryAllState.record['wands']!.map((val) {
                         return DrawerCard(data: val, category: 'wands');
                       }).toList(),
                     ),
@@ -198,9 +199,7 @@ class DefaultLayout extends ConsumerWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       margin: const EdgeInsets.symmetric(vertical: 5),
-      decoration: BoxDecoration(
-        color: Colors.grey.withOpacity(0.3),
-      ),
+      decoration: BoxDecoration(color: Colors.grey.withOpacity(0.3)),
       child: Text(title),
     );
   }
