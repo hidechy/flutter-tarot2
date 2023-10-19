@@ -133,7 +133,7 @@ class TarotRecentlyPage extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: Text(
                 tarotAllOne.wordJ,
-                style: TextStyle(color: Colors.yellowAccent),
+                style: const TextStyle(color: Colors.yellowAccent),
               ),
             ),
             const SizedBox(height: 10),
@@ -162,7 +162,7 @@ class TarotRecentlyPage extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: Text(
                 tarotAllOne.wordR,
-                style: TextStyle(color: Colors.yellowAccent),
+                style: const TextStyle(color: Colors.yellowAccent),
               ),
             ),
             const SizedBox(height: 10),
