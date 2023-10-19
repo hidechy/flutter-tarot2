@@ -2,9 +2,9 @@
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../data/http/client.dart';
-import '../model/tarot_history.dart';
-import '../state/tarot_history_state.dart';
+import '../../data/http/client.dart';
+import '../../model/tarot_history.dart';
+import 'tarot_history_state.dart';
 
 final tarotHistoryProvider = StateNotifierProvider.autoDispose<TarotHistoryNotifier, TarotHistoryState>((ref) {
   final client = ref.read(httpClientProvider);

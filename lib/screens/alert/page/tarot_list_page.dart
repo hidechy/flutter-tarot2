@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../extensions/extensions.dart';
-import '../../model/tarot_all.dart';
-import '../../model/tarot_history.dart';
-import '../../utility/utility.dart';
-import '../../viewmodel/tarot_all_viewmodel.dart';
-import '../../viewmodel/tarot_history_notifier.dart';
+import '../../../extensions/extensions.dart';
+import '../../../model/tarot_all.dart';
+import '../../../model/tarot_history.dart';
+import '../../../state/tarot_all/tarot_all_viewmodel.dart';
+import '../../../state/tarot_history/tarot_history_notifier.dart';
+import '../../../utility/utility.dart';
 
 class TarotListPage extends ConsumerWidget {
   TarotListPage({super.key, required this.date});

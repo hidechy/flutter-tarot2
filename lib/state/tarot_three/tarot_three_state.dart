@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../model/tarot_one.dart';
+import '../../model/tarot_one.dart';
 
 part 'tarot_three_state.freezed.dart';
 

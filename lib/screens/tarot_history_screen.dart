@@ -8,8 +8,8 @@ import '../layouts/_components/history_card.dart';
 import '../layouts/default_layout.dart';
 import '../model/tarot_all.dart';
 import '../model/tarot_history.dart';
-import '../viewmodel/tarot_all_viewmodel.dart';
-import '../viewmodel/tarot_history_notifier.dart';
+import '../state/tarot_all/tarot_all_viewmodel.dart';
+import '../state/tarot_history/tarot_history_notifier.dart';
 
 class TarotHistoryScreen extends ConsumerWidget {
   TarotHistoryScreen({super.key});

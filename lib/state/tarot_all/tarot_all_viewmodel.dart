@@ -2,15 +2,15 @@
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../data/http/client.dart';
-import '../model/tarot_all.dart';
-import '../state/tarot_category_all_state.dart';
-import '../state/tarot_straight_all_state.dart';
+import '../../data/http/client.dart';
+import '../../model/tarot_all.dart';
+import 'tarot_category_all_state.dart';
+import 'tarot_straight_all_state.dart';
 
 ////////////////////////////////////////////////////////////////
 
-final tarotCategoryAllProvider = StateNotifierProvider.autoDispose<
-    TarotCategoryAllNotifier, TarotCategoryAllState>((ref) {
+final tarotCategoryAllProvider =
+    StateNotifierProvider.autoDispose<TarotCategoryAllNotifier, TarotCategoryAllState>((ref) {
   final client = ref.read(httpClientProvider);
 
   return TarotCategoryAllNotifier(
@@ -36,21 +36,16 @@ class TarotCategoryAllNotifier extends StateNotifier<TarotCategoryAllState> {
         for (var i = 0; i < int.parse(value['data'].length.toString()); i++) {
           final oneData = value['data'][i];
 
-          if (RegExp(kindList[j]).firstMatch(oneData['image'].toString()) !=
-              null) {
+          if (RegExp(kindList[j]).firstMatch(oneData['image'].toString()) != null) {
             final list2 = <DateTime>[];
-            for (var k = 0;
-                k < int.parse(oneData['drawNum_j'].length.toString());
-                k++) {
+            for (var k = 0; k < int.parse(oneData['drawNum_j'].length.toString()); k++) {
               list2.add(
                 DateTime.parse(oneData['drawNum_j'][k].toString()),
               );
             }
 
             final list3 = <DateTime>[];
-            for (var k = 0;
-                k < int.parse(oneData['drawNum_r'].length.toString());
-                k++) {
+            for (var k = 0; k < int.parse(oneData['drawNum_r'].length.toString()); k++) {
               list3.add(
                 DateTime.parse(oneData['drawNum_r'][k].toString()),
               );
@@ -89,8 +84,8 @@ class TarotCategoryAllNotifier extends StateNotifier<TarotCategoryAllState> {
 
 ////////////////////////////////////////////////////////////////
 
-final tarotStraightAllProvider = StateNotifierProvider.autoDispose<
-    TarotStraightAllNotifier, TarotStraightAllState>((ref) {
+final tarotStraightAllProvider =
+    StateNotifierProvider.autoDispose<TarotStraightAllNotifier, TarotStraightAllState>((ref) {
   final client = ref.read(httpClientProvider);
 
   return TarotStraightAllNotifier(
@@ -111,18 +106,14 @@ class TarotStraightAllNotifier extends StateNotifier<TarotStraightAllState> {
         final oneData = value['data'][i];
 
         final list2 = <DateTime>[];
-        for (var k = 0;
-            k < int.parse(oneData['drawNum_j'].length.toString());
-            k++) {
+        for (var k = 0; k < int.parse(oneData['drawNum_j'].length.toString()); k++) {
           list2.add(
             DateTime.parse(oneData['drawNum_j'][k].toString()),
           );
         }
 
         final list3 = <DateTime>[];
-        for (var k = 0;
-            k < int.parse(oneData['drawNum_r'].length.toString());
-            k++) {
+        for (var k = 0; k < int.parse(oneData['drawNum_r'].length.toString()); k++) {
           list3.add(
             DateTime.parse(oneData['drawNum_r'][k].toString()),
           );

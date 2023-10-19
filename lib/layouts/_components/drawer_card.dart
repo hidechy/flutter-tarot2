@@ -7,8 +7,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../model/tarot_all.dart';
-import '../../state/tarot_rate_state.dart';
-import '../../viewmodel/tarot_rate_viewmodel.dart';
+import '../../state/tarot_rate/tarot_rate_state.dart';
+import '../../state/tarot_rate/tarot_rate_viewmodel.dart';
 import 'tarot_alert.dart';
 
 class DrawerCard extends ConsumerWidget {
@@ -95,9 +95,7 @@ class DrawerCard extends ConsumerWidget {
                           child: Text(
                             data.drawNumJ.length.toString(),
                             style: TextStyle(
-                              color: (data.drawNumJ.isEmpty)
-                                  ? Colors.yellowAccent
-                                  : Colors.white,
+                              color: (data.drawNumJ.isEmpty) ? Colors.yellowAccent : Colors.white,
                             ),
                           ),
                         ),
@@ -107,9 +105,7 @@ class DrawerCard extends ConsumerWidget {
                           child: Text(
                             data.drawNumR.length.toString(),
                             style: TextStyle(
-                              color: (data.drawNumR.isEmpty)
-                                  ? Colors.yellowAccent
-                                  : Colors.white,
+                              color: (data.drawNumR.isEmpty) ? Colors.yellowAccent : Colors.white,
                             ),
                           ),
                         ),
@@ -148,8 +144,7 @@ class DrawerCard extends ConsumerWidget {
       alignment: Alignment.topRight,
       child: Text(
         rate,
-        style: TextStyle(
-            color: (exRate[0] == '0') ? Colors.yellowAccent : Colors.white),
+        style: TextStyle(color: (exRate[0] == '0') ? Colors.yellowAccent : Colors.white),
       ),
     );
   }

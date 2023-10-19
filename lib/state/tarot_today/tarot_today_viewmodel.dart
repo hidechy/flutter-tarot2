@@ -2,12 +2,12 @@
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../data/http/client.dart';
-import '../model/tarot_one.dart';
-import '../state/tarot_today_state.dart';
+import '../../data/http/client.dart';
+import '../../model/tarot_one.dart';
+import 'tarot_today_state.dart';
 
-final tarotTodayProvider = StateNotifierProvider.autoDispose
-    .family<TarotTodayNotifier, TarotTodayState, String>((ref, today) {
+final tarotTodayProvider =
+    StateNotifierProvider.autoDispose.family<TarotTodayNotifier, TarotTodayState, String>((ref, today) {
   final client = ref.read(httpClientProvider);
 
   return TarotTodayNotifier(

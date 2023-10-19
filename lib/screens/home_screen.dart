@@ -5,9 +5,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../layouts/default_layout.dart';
 import '../model/tarot_all.dart';
+import '../state/tarot_all/tarot_all_viewmodel.dart';
+import '../state/tarot_today/tarot_today_viewmodel.dart';
 import '../utility/utility.dart';
-import '../viewmodel/tarot_all_viewmodel.dart';
-import '../viewmodel/tarot_today_viewmodel.dart';
 
 class HomeScreen extends ConsumerWidget {
   HomeScreen({super.key});

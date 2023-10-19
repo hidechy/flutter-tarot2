@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:tarot/state/tarot_all/tarot_all_viewmodel.dart';
 
 import '../../extensions/extensions.dart';
-import '../../viewmodel/tarot_history_notifier.dart';
-import 'tarot_list_page.dart';
+import 'page/tarot_recently_page.dart';
 
 class TabInfo {
   TabInfo(this.label, this.widget);
@@ -14,8 +14,8 @@ class TabInfo {
   Widget widget;
 }
 
-class TarotListAlert extends ConsumerWidget {
-  TarotListAlert({super.key});
+class TarotRecentlyAlert extends ConsumerWidget {
+  TarotRecentlyAlert({super.key});
 
   List<TabInfo> tabs = [];
 
@@ -46,15 +46,7 @@ class TarotListAlert extends ConsumerWidget {
             bottom: TabBar(
               isScrollable: true,
               indicatorColor: Colors.blueAccent,
-              tabs: tabs.map((TabInfo tab) {
-                return Tab(text: tab.label);
-              }).toList(),
-            ),
-
-            flexibleSpace: const DecoratedBox(
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-              ),
+              tabs: tabs.map((TabInfo tab) => Tab(text: tab.label)).toList(),
             ),
           ),
         ),
@@ -67,26 +59,21 @@ class TarotListAlert extends ConsumerWidget {
 
   ///
   void makeTab() {
-    final tarotHistoryState = _ref.watch(tarotHistoryProvider);
+    tabs = [];
 
-    final list = <String>[];
-    tarotHistoryState.record.forEach((element) {
-      final ym = '${element.year}-${element.month}-${element.day} 00:00:00'.toDateTime().yyyymm;
+    final record = _ref.watch(tarotStraightAllProvider.select((value) => value.record));
 
-      if (!list.contains(ym)) {
-        list.add(ym);
-      }
-    });
+    for (var i = 0; i < 7; i++) {
+      final day = DateTime.now().add(Duration(days: i * -1));
 
-    list
-      ..sort((a, b) => -1 * a.compareTo(b))
-      ..forEach((element) {
-        tabs.add(
-          TabInfo(
-            element,
-            TarotListPage(date: '$element-01 00:00:00'.toDateTime()),
-          ),
-        );
-      });
+      final youbi = day.youbiStr.substring(0, 3);
+
+      tabs.add(
+        TabInfo(
+          '${day.yyyymmdd} ($youbi)',
+          TarotRecentlyPage(date: day, tarotAllList: record),
+        ),
+      );
+    }
   }
 }

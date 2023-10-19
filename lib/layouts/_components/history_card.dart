@@ -5,8 +5,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../model/tarot_all.dart';
 import '../../model/tarot_history.dart';
+import '../../state/tarot_all/tarot_all_viewmodel.dart';
 import '../../utility/utility.dart';
-import '../../viewmodel/tarot_all_viewmodel.dart';
 
 class HistoryCard extends ConsumerWidget {
   HistoryCard({super.key, required this.history, required this.usage});

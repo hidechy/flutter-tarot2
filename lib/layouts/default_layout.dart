@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tarot/layouts/_components/_tarot_dialog.dart';
-import 'package:tarot/layouts/_components/tarot_list_alert.dart';
 
-import '../screens/tarot_history_screen.dart';
+import '../screens/alert/tarot_list_alert.dart';
+import '../screens/alert/tarot_recently_alert.dart';
 import '../screens/tarot_ranking_screen.dart';
+import '../state/tarot_all/tarot_all_viewmodel.dart';
 import '../utility/utility.dart';
-import '../viewmodel/tarot_all_viewmodel.dart';
+import '_components/_tarot_dialog.dart';
 import '_components/drawer_card.dart';
 
 class DefaultLayout extends ConsumerWidget {
@@ -58,20 +58,33 @@ class DefaultLayout extends ConsumerWidget {
                   onPressed: () {
                     TarotDialog(
                       context: context,
+                      widget: TarotRecentlyAlert(),
+                    );
+                  },
+                  icon: const Icon(Icons.pages),
+                ),
+                IconButton(
+                  onPressed: () {
+                    TarotDialog(
+                      context: context,
                       widget: TarotListAlert(),
                     );
                   },
                   icon: const Icon(Icons.list),
                 ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => TarotHistoryScreen()),
-                    );
-                  },
-                  icon: const Icon(Icons.calendar_today),
-                ),
+
+                //
+                // IconButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => TarotHistoryScreen()),
+                //     );
+                //   },
+                //   icon: const Icon(Icons.calendar_today),
+                // ),
+                //
+
                 IconButton(
                   onPressed: () {
                     Navigator.push(

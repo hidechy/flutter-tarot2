@@ -8,7 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../layouts/_components/history_card.dart';
 import '../layouts/default_layout.dart';
 import '../model/tarot_history.dart';
-import '../viewmodel/tarot_history_notifier.dart';
+import '../state/tarot_history/tarot_history_notifier.dart';
 
 class TarotRankingScreen extends ConsumerWidget {
   TarotRankingScreen({super.key});

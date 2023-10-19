@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../model/tarot_all.dart';
-import '../../state/tarot_rate_state.dart';
-import '../../viewmodel/tarot_rate_viewmodel.dart';
+import '../../state/tarot_rate/tarot_rate_state.dart';
+import '../../state/tarot_rate/tarot_rate_viewmodel.dart';
 
 class TarotAlert extends ConsumerWidget {
   TarotAlert({super.key, required this.data});
@@ -20,9 +20,7 @@ class TarotAlert extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     _ref = ref;
 
-    final image = (data.image == '')
-        ? ''
-        : 'http://toyohide.work/BrainLog/tarotcards/${data.image}.jpg';
+    final image = (data.image == '') ? '' : 'http://toyohide.work/BrainLog/tarotcards/${data.image}.jpg';
 
     return AlertDialog(
       backgroundColor: Colors.transparent,
@@ -39,8 +37,7 @@ class TarotAlert extends ConsumerWidget {
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 10, right: 10),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
                       decoration: BoxDecoration(
                         color: Colors.yellowAccent.withOpacity(0.3),
                       ),
@@ -48,8 +45,7 @@ class TarotAlert extends ConsumerWidget {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 10, right: 10),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
                       decoration: BoxDecoration(
                         color: Colors.yellowAccent.withOpacity(0.3),
                       ),

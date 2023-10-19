@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tarot_history_state.dart';
 
@@ -57,22 +57,22 @@ class _$TarotHistoryStateCopyWithImpl<$Res, $Val extends TarotHistoryState>
 }
 
 /// @nodoc
-abstract class _$$_TarotHistoryStateCopyWith<$Res>
+abstract class _$$TarotHistoryStateImplCopyWith<$Res>
     implements $TarotHistoryStateCopyWith<$Res> {
-  factory _$$_TarotHistoryStateCopyWith(_$_TarotHistoryState value,
-          $Res Function(_$_TarotHistoryState) then) =
-      __$$_TarotHistoryStateCopyWithImpl<$Res>;
+  factory _$$TarotHistoryStateImplCopyWith(_$TarotHistoryStateImpl value,
+          $Res Function(_$TarotHistoryStateImpl) then) =
+      __$$TarotHistoryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<TarotHistory> record});
 }
 
 /// @nodoc
-class __$$_TarotHistoryStateCopyWithImpl<$Res>
-    extends _$TarotHistoryStateCopyWithImpl<$Res, _$_TarotHistoryState>
-    implements _$$_TarotHistoryStateCopyWith<$Res> {
-  __$$_TarotHistoryStateCopyWithImpl(
-      _$_TarotHistoryState _value, $Res Function(_$_TarotHistoryState) _then)
+class __$$TarotHistoryStateImplCopyWithImpl<$Res>
+    extends _$TarotHistoryStateCopyWithImpl<$Res, _$TarotHistoryStateImpl>
+    implements _$$TarotHistoryStateImplCopyWith<$Res> {
+  __$$TarotHistoryStateImplCopyWithImpl(_$TarotHistoryStateImpl _value,
+      $Res Function(_$TarotHistoryStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_TarotHistoryStateCopyWithImpl<$Res>
   $Res call({
     Object? record = null,
   }) {
-    return _then(_$_TarotHistoryState(
+    return _then(_$TarotHistoryStateImpl(
       record: null == record
           ? _value._record
           : record // ignore: cast_nullable_to_non_nullable
@@ -91,13 +91,14 @@ class __$$_TarotHistoryStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TarotHistoryState implements _TarotHistoryState {
-  const _$_TarotHistoryState({required final List<TarotHistory> record})
+class _$TarotHistoryStateImpl implements _TarotHistoryState {
+  const _$TarotHistoryStateImpl({required final List<TarotHistory> record})
       : _record = record;
 
   final List<TarotHistory> _record;
   @override
   List<TarotHistory> get record {
+    if (_record is EqualUnmodifiableListView) return _record;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_record);
   }
@@ -111,7 +112,7 @@ class _$_TarotHistoryState implements _TarotHistoryState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TarotHistoryState &&
+            other is _$TarotHistoryStateImpl &&
             const DeepCollectionEquality().equals(other._record, _record));
   }
 
@@ -122,19 +123,19 @@ class _$_TarotHistoryState implements _TarotHistoryState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TarotHistoryStateCopyWith<_$_TarotHistoryState> get copyWith =>
-      __$$_TarotHistoryStateCopyWithImpl<_$_TarotHistoryState>(
+  _$$TarotHistoryStateImplCopyWith<_$TarotHistoryStateImpl> get copyWith =>
+      __$$TarotHistoryStateImplCopyWithImpl<_$TarotHistoryStateImpl>(
           this, _$identity);
 }
 
 abstract class _TarotHistoryState implements TarotHistoryState {
   const factory _TarotHistoryState({required final List<TarotHistory> record}) =
-      _$_TarotHistoryState;
+      _$TarotHistoryStateImpl;
 
   @override
   List<TarotHistory> get record;
   @override
   @JsonKey(ignore: true)
-  _$$_TarotHistoryStateCopyWith<_$_TarotHistoryState> get copyWith =>
+  _$$TarotHistoryStateImplCopyWith<_$TarotHistoryStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
