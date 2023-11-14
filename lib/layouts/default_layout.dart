@@ -103,7 +103,7 @@ class DefaultLayout extends ConsumerWidget {
                       widget: TarotCelticCrossAlert(),
                     );
                   },
-                  icon: Icon(Icons.card_giftcard),
+                  icon: const Icon(Icons.card_giftcard),
                 ),
               ],
             )
