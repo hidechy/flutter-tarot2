@@ -2,11 +2,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../model/tarot_one.dart';
 
-part 'tarot_three_state.freezed.dart';
+part 'tarot_draw_state.freezed.dart';
 
 @freezed
-class TarotThreeState with _$TarotThreeState {
-  const factory TarotThreeState({
+class TarotDrawState with _$TarotDrawState {
+  const factory TarotDrawState({
     required List<TarotOne> record,
-  }) = _TarotThreeState;
+  }) = _TarotDrawState;
 }

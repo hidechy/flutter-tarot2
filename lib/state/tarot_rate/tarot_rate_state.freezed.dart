@@ -19,25 +19,26 @@ mixin _$TarotRateState {
   List<TarotRate> get record => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TarotRateStateCopyWith<TarotRateState> get copyWith => throw _privateConstructorUsedError;
+  $TarotRateStateCopyWith<TarotRateState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TarotRateStateCopyWith<$Res> {
-  factory $TarotRateStateCopyWith(TarotRateState value, $Res Function(TarotRateState) then) =
+  factory $TarotRateStateCopyWith(
+          TarotRateState value, $Res Function(TarotRateState) then) =
       _$TarotRateStateCopyWithImpl<$Res, TarotRateState>;
-
   @useResult
   $Res call({List<TarotRate> record});
 }
 
 /// @nodoc
-class _$TarotRateStateCopyWithImpl<$Res, $Val extends TarotRateState> implements $TarotRateStateCopyWith<$Res> {
+class _$TarotRateStateCopyWithImpl<$Res, $Val extends TarotRateState>
+    implements $TarotRateStateCopyWith<$Res> {
   _$TarotRateStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -56,19 +57,22 @@ class _$TarotRateStateCopyWithImpl<$Res, $Val extends TarotRateState> implements
 }
 
 /// @nodoc
-abstract class _$$TarotRateStateImplCopyWith<$Res> implements $TarotRateStateCopyWith<$Res> {
-  factory _$$TarotRateStateImplCopyWith(_$TarotRateStateImpl value, $Res Function(_$TarotRateStateImpl) then) =
+abstract class _$$TarotRateStateImplCopyWith<$Res>
+    implements $TarotRateStateCopyWith<$Res> {
+  factory _$$TarotRateStateImplCopyWith(_$TarotRateStateImpl value,
+          $Res Function(_$TarotRateStateImpl) then) =
       __$$TarotRateStateImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({List<TarotRate> record});
 }
 
 /// @nodoc
-class __$$TarotRateStateImplCopyWithImpl<$Res> extends _$TarotRateStateCopyWithImpl<$Res, _$TarotRateStateImpl>
+class __$$TarotRateStateImplCopyWithImpl<$Res>
+    extends _$TarotRateStateCopyWithImpl<$Res, _$TarotRateStateImpl>
     implements _$$TarotRateStateImplCopyWith<$Res> {
-  __$$TarotRateStateImplCopyWithImpl(_$TarotRateStateImpl _value, $Res Function(_$TarotRateStateImpl) _then)
+  __$$TarotRateStateImplCopyWithImpl(
+      _$TarotRateStateImpl _value, $Res Function(_$TarotRateStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,10 +92,10 @@ class __$$TarotRateStateImplCopyWithImpl<$Res> extends _$TarotRateStateCopyWithI
 /// @nodoc
 
 class _$TarotRateStateImpl implements _TarotRateState {
-  const _$TarotRateStateImpl({required final List<TarotRate> record}) : _record = record;
+  const _$TarotRateStateImpl({required final List<TarotRate> record})
+      : _record = record;
 
   final List<TarotRate> _record;
-
   @override
   List<TarotRate> get record {
     if (_record is EqualUnmodifiableListView) return _record;
@@ -113,22 +117,25 @@ class _$TarotRateStateImpl implements _TarotRateState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_record));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_record));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TarotRateStateImplCopyWith<_$TarotRateStateImpl> get copyWith =>
-      __$$TarotRateStateImplCopyWithImpl<_$TarotRateStateImpl>(this, _$identity);
+      __$$TarotRateStateImplCopyWithImpl<_$TarotRateStateImpl>(
+          this, _$identity);
 }
 
 abstract class _TarotRateState implements TarotRateState {
-  const factory _TarotRateState({required final List<TarotRate> record}) = _$TarotRateStateImpl;
+  const factory _TarotRateState({required final List<TarotRate> record}) =
+      _$TarotRateStateImpl;
 
   @override
   List<TarotRate> get record;
-
   @override
   @JsonKey(ignore: true)
-  _$$TarotRateStateImplCopyWith<_$TarotRateStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TarotRateStateImplCopyWith<_$TarotRateStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -19,26 +19,27 @@ mixin _$TarotStraightAllState {
   List<TarotAll> get record => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TarotStraightAllStateCopyWith<TarotStraightAllState> get copyWith => throw _privateConstructorUsedError;
+  $TarotStraightAllStateCopyWith<TarotStraightAllState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TarotStraightAllStateCopyWith<$Res> {
-  factory $TarotStraightAllStateCopyWith(TarotStraightAllState value, $Res Function(TarotStraightAllState) then) =
+  factory $TarotStraightAllStateCopyWith(TarotStraightAllState value,
+          $Res Function(TarotStraightAllState) then) =
       _$TarotStraightAllStateCopyWithImpl<$Res, TarotStraightAllState>;
-
   @useResult
   $Res call({List<TarotAll> record});
 }
 
 /// @nodoc
-class _$TarotStraightAllStateCopyWithImpl<$Res, $Val extends TarotStraightAllState>
+class _$TarotStraightAllStateCopyWithImpl<$Res,
+        $Val extends TarotStraightAllState>
     implements $TarotStraightAllStateCopyWith<$Res> {
   _$TarotStraightAllStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -57,11 +58,12 @@ class _$TarotStraightAllStateCopyWithImpl<$Res, $Val extends TarotStraightAllSta
 }
 
 /// @nodoc
-abstract class _$$TarotStraightAllStateImplCopyWith<$Res> implements $TarotStraightAllStateCopyWith<$Res> {
+abstract class _$$TarotStraightAllStateImplCopyWith<$Res>
+    implements $TarotStraightAllStateCopyWith<$Res> {
   factory _$$TarotStraightAllStateImplCopyWith(
-          _$TarotStraightAllStateImpl value, $Res Function(_$TarotStraightAllStateImpl) then) =
+          _$TarotStraightAllStateImpl value,
+          $Res Function(_$TarotStraightAllStateImpl) then) =
       __$$TarotStraightAllStateImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({List<TarotAll> record});
@@ -69,10 +71,11 @@ abstract class _$$TarotStraightAllStateImplCopyWith<$Res> implements $TarotStrai
 
 /// @nodoc
 class __$$TarotStraightAllStateImplCopyWithImpl<$Res>
-    extends _$TarotStraightAllStateCopyWithImpl<$Res, _$TarotStraightAllStateImpl>
+    extends _$TarotStraightAllStateCopyWithImpl<$Res,
+        _$TarotStraightAllStateImpl>
     implements _$$TarotStraightAllStateImplCopyWith<$Res> {
-  __$$TarotStraightAllStateImplCopyWithImpl(
-      _$TarotStraightAllStateImpl _value, $Res Function(_$TarotStraightAllStateImpl) _then)
+  __$$TarotStraightAllStateImplCopyWithImpl(_$TarotStraightAllStateImpl _value,
+      $Res Function(_$TarotStraightAllStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,10 +95,10 @@ class __$$TarotStraightAllStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TarotStraightAllStateImpl implements _TarotStraightAllState {
-  const _$TarotStraightAllStateImpl({required final List<TarotAll> record}) : _record = record;
+  const _$TarotStraightAllStateImpl({required final List<TarotAll> record})
+      : _record = record;
 
   final List<TarotAll> _record;
-
   @override
   List<TarotAll> get record {
     if (_record is EqualUnmodifiableListView) return _record;
@@ -117,22 +120,25 @@ class _$TarotStraightAllStateImpl implements _TarotStraightAllState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_record));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_record));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TarotStraightAllStateImplCopyWith<_$TarotStraightAllStateImpl> get copyWith =>
-      __$$TarotStraightAllStateImplCopyWithImpl<_$TarotStraightAllStateImpl>(this, _$identity);
+  _$$TarotStraightAllStateImplCopyWith<_$TarotStraightAllStateImpl>
+      get copyWith => __$$TarotStraightAllStateImplCopyWithImpl<
+          _$TarotStraightAllStateImpl>(this, _$identity);
 }
 
 abstract class _TarotStraightAllState implements TarotStraightAllState {
-  const factory _TarotStraightAllState({required final List<TarotAll> record}) = _$TarotStraightAllStateImpl;
+  const factory _TarotStraightAllState({required final List<TarotAll> record}) =
+      _$TarotStraightAllStateImpl;
 
   @override
   List<TarotAll> get record;
-
   @override
   @JsonKey(ignore: true)
-  _$$TarotStraightAllStateImplCopyWith<_$TarotStraightAllStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TarotStraightAllStateImplCopyWith<_$TarotStraightAllStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

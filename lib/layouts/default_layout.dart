@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:tarot/screens/alert/tarot_celtic_cross_alert.dart';
 
 import '../screens/alert/tarot_list_alert.dart';
 import '../screens/alert/tarot_recently_alert.dart';
@@ -93,6 +94,16 @@ class DefaultLayout extends ConsumerWidget {
                     );
                   },
                   icon: const Icon(Icons.trending_down_outlined),
+                ),
+
+                IconButton(
+                  onPressed: () {
+                    TarotDialog(
+                      context: context,
+                      widget: TarotCelticCrossAlert(),
+                    );
+                  },
+                  icon: Icon(Icons.card_giftcard),
                 ),
               ],
             )

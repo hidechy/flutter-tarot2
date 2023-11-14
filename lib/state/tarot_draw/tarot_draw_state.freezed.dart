@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'tarot_three_state.dart';
+part of 'tarot_draw_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,29 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$TarotThreeState {
+mixin _$TarotDrawState {
   List<TarotOne> get record => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TarotThreeStateCopyWith<TarotThreeState> get copyWith => throw _privateConstructorUsedError;
+  $TarotDrawStateCopyWith<TarotDrawState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TarotThreeStateCopyWith<$Res> {
-  factory $TarotThreeStateCopyWith(TarotThreeState value, $Res Function(TarotThreeState) then) =
-      _$TarotThreeStateCopyWithImpl<$Res, TarotThreeState>;
-
+abstract class $TarotDrawStateCopyWith<$Res> {
+  factory $TarotDrawStateCopyWith(
+          TarotDrawState value, $Res Function(TarotDrawState) then) =
+      _$TarotDrawStateCopyWithImpl<$Res, TarotDrawState>;
   @useResult
   $Res call({List<TarotOne> record});
 }
 
 /// @nodoc
-class _$TarotThreeStateCopyWithImpl<$Res, $Val extends TarotThreeState> implements $TarotThreeStateCopyWith<$Res> {
-  _$TarotThreeStateCopyWithImpl(this._value, this._then);
+class _$TarotDrawStateCopyWithImpl<$Res, $Val extends TarotDrawState>
+    implements $TarotDrawStateCopyWith<$Res> {
+  _$TarotDrawStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -56,19 +57,22 @@ class _$TarotThreeStateCopyWithImpl<$Res, $Val extends TarotThreeState> implemen
 }
 
 /// @nodoc
-abstract class _$$TarotThreeStateImplCopyWith<$Res> implements $TarotThreeStateCopyWith<$Res> {
-  factory _$$TarotThreeStateImplCopyWith(_$TarotThreeStateImpl value, $Res Function(_$TarotThreeStateImpl) then) =
-      __$$TarotThreeStateImplCopyWithImpl<$Res>;
-
+abstract class _$$TarotDrawStateImplCopyWith<$Res>
+    implements $TarotDrawStateCopyWith<$Res> {
+  factory _$$TarotDrawStateImplCopyWith(_$TarotDrawStateImpl value,
+          $Res Function(_$TarotDrawStateImpl) then) =
+      __$$TarotDrawStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<TarotOne> record});
 }
 
 /// @nodoc
-class __$$TarotThreeStateImplCopyWithImpl<$Res> extends _$TarotThreeStateCopyWithImpl<$Res, _$TarotThreeStateImpl>
-    implements _$$TarotThreeStateImplCopyWith<$Res> {
-  __$$TarotThreeStateImplCopyWithImpl(_$TarotThreeStateImpl _value, $Res Function(_$TarotThreeStateImpl) _then)
+class __$$TarotDrawStateImplCopyWithImpl<$Res>
+    extends _$TarotDrawStateCopyWithImpl<$Res, _$TarotDrawStateImpl>
+    implements _$$TarotDrawStateImplCopyWith<$Res> {
+  __$$TarotDrawStateImplCopyWithImpl(
+      _$TarotDrawStateImpl _value, $Res Function(_$TarotDrawStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -76,7 +80,7 @@ class __$$TarotThreeStateImplCopyWithImpl<$Res> extends _$TarotThreeStateCopyWit
   $Res call({
     Object? record = null,
   }) {
-    return _then(_$TarotThreeStateImpl(
+    return _then(_$TarotDrawStateImpl(
       record: null == record
           ? _value._record
           : record // ignore: cast_nullable_to_non_nullable
@@ -87,11 +91,11 @@ class __$$TarotThreeStateImplCopyWithImpl<$Res> extends _$TarotThreeStateCopyWit
 
 /// @nodoc
 
-class _$TarotThreeStateImpl implements _TarotThreeState {
-  const _$TarotThreeStateImpl({required final List<TarotOne> record}) : _record = record;
+class _$TarotDrawStateImpl implements _TarotDrawState {
+  const _$TarotDrawStateImpl({required final List<TarotOne> record})
+      : _record = record;
 
   final List<TarotOne> _record;
-
   @override
   List<TarotOne> get record {
     if (_record is EqualUnmodifiableListView) return _record;
@@ -101,34 +105,37 @@ class _$TarotThreeStateImpl implements _TarotThreeState {
 
   @override
   String toString() {
-    return 'TarotThreeState(record: $record)';
+    return 'TarotDrawState(record: $record)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TarotThreeStateImpl &&
+            other is _$TarotDrawStateImpl &&
             const DeepCollectionEquality().equals(other._record, _record));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_record));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_record));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TarotThreeStateImplCopyWith<_$TarotThreeStateImpl> get copyWith =>
-      __$$TarotThreeStateImplCopyWithImpl<_$TarotThreeStateImpl>(this, _$identity);
+  _$$TarotDrawStateImplCopyWith<_$TarotDrawStateImpl> get copyWith =>
+      __$$TarotDrawStateImplCopyWithImpl<_$TarotDrawStateImpl>(
+          this, _$identity);
 }
 
-abstract class _TarotThreeState implements TarotThreeState {
-  const factory _TarotThreeState({required final List<TarotOne> record}) = _$TarotThreeStateImpl;
+abstract class _TarotDrawState implements TarotDrawState {
+  const factory _TarotDrawState({required final List<TarotOne> record}) =
+      _$TarotDrawStateImpl;
 
   @override
   List<TarotOne> get record;
-
   @override
   @JsonKey(ignore: true)
-  _$$TarotThreeStateImplCopyWith<_$TarotThreeStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TarotDrawStateImplCopyWith<_$TarotDrawStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
